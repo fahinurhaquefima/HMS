@@ -1,0 +1,45 @@
+﻿@model HMS.WebApp.Models.Doctor
+
+@{
+    ViewData["Title"] = "CreateOrEdit";
+}
+
+<h1>CreateOrEdit</h1>
+
+<h4>Doctor</h4>
+<hr />
+<div class="row">
+     <div class="col-md-6">
+        <form asp-action="CreateOrEdit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Age" class="control-label"></label>
+                <input asp-for="Age" class="form-control" />
+                <span asp-validation-for="Age" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Specialist" class="control-label"></label>
+                <input asp-for="Specialist" class="form-control" />
+                <span asp-validation-for="Specialist" class="text-danger"></span>
+            </div>
+            <div class="form-group mt-4">
+                <input type="submit" value="Create" class="btn btn-secondary"/>
+
+            </div>
+        </form>
+    </div>
+</div>
+<div>
+    <a asp-action="Index" asp-controller="Doctor" class="btn btn-sm btn-primary ">Back to List</a>
+</div>
+
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
